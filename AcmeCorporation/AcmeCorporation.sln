@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcmeCorporation", "AcmeCorp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ageCalc", "..\ageCalc\ageCalc.csproj", "{3466ECE6-2699-4978-8806-80AD7BE75C46}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerialHandler", "..\SerialHandler\SerialHandler.csproj", "{D4920B6D-0A1B-4600-973D-6BF1A8F12886}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeTests", "..\AcmeTests\AcmeTests.csproj", "{6A715300-A29E-4D80-8697-655D73E08E9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcmeTests", "..\AcmeTests\AcmeTests.csproj", "{6A715300-A29E-4D80-8697-655D73E08E9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		{3466ECE6-2699-4978-8806-80AD7BE75C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3466ECE6-2699-4978-8806-80AD7BE75C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3466ECE6-2699-4978-8806-80AD7BE75C46}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D4920B6D-0A1B-4600-973D-6BF1A8F12886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D4920B6D-0A1B-4600-973D-6BF1A8F12886}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D4920B6D-0A1B-4600-973D-6BF1A8F12886}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D4920B6D-0A1B-4600-973D-6BF1A8F12886}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6A715300-A29E-4D80-8697-655D73E08E9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6A715300-A29E-4D80-8697-655D73E08E9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A715300-A29E-4D80-8697-655D73E08E9A}.Release|Any CPU.ActiveCfg = Release|Any CPU

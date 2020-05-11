@@ -29,8 +29,8 @@ namespace AcmeCorporation
             services.AddControllersWithViews();
 
             services.AddDbContext<AcmeCorporationContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("AcmeCorporationContext")));
-            services.AddScoped<IAgeCalculation, Verify18>();
+                    options.UseSqlite(Configuration.GetConnectionString("AcmeCorporationContext")));
+            services.AddScoped<IAgeCalculation, AgeCalculator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

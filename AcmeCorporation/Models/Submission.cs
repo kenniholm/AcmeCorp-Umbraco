@@ -26,7 +26,7 @@ namespace AcmeCorporation.Models
         [Display(Name = "Email address")]
         public string EmailAdress { get; set; }
 
-        [Required(ErrorMessage = "Please enter serial provided from your purchase receipt"), Range(1111111111, 99999999999)]
+        [Required(ErrorMessage = "Please enter serial provided from your purchase receipt")]
         [Display(Name = "Product serial number")]
         public Guid ProductSerial { get; set; }
     }
