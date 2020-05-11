@@ -57,8 +57,23 @@ namespace AcmeCorporation.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(submission);
-                await _context.SaveChangesAsync();
+                IQueryable<Submission> Submissions = from s in _context.Submission
+                                  where s.ProductSerial == submission.ProductSerial
+                                  select s;
+                IQueryable<PurchasedProduct> ValidSerials = from s in _context.PurchasedProduct
+                                                            where s.ProductSerial == submission.ProductSerial
+                                                            select s;
+
+                if (Submissions.Count() <= 2 && ValidSerials.Count() <= 0)
+                {
+                    _context.Add(submission);
+                    await _context.SaveChangesAsync();
+                }
+                else
+                {
+                    // Missing logic
+                }
+
                 return RedirectToAction(nameof(Index));
             }
             return View(submission);

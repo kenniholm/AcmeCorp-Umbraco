@@ -2,7 +2,7 @@
 
 namespace ageCalc
 {
-    public class Verify18 : IAgeCalculation
+    public class AgeCalculator : IAgeCalculation
     {
         private DateTime _dob;
         private static int _age;
@@ -22,13 +22,11 @@ namespace ageCalc
 
         private void CalcAge()
         {
-            int age = 0;
-
-            age = DateTime.Now.Year - _dob.Year;
+            int age = DateTime.Now.Year - _dob.Year;
             
             if (DateTime.Now.DayOfYear < _dob.DayOfYear)
             {
-                age = age - 1;
+                age -= 1;
             }
 
             _age = age;
