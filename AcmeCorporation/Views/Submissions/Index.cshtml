@@ -1,10 +1,14 @@
-﻿@model IEnumerable<AcmeCorporation.Models.Submission>
+﻿@model X.PagedList.IPagedList<AcmeCorporation.Models.Submission>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Mvc;
+@using X.PagedList.Web.Common;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Submissions";
 }
 
-<h1>Index</h1>
+<h1>Submissions</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,41 +17,52 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FirstName)
+                @Html.DisplayNameFor(model => model[0].FirstName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LastName)
+                @Html.DisplayNameFor(model => model[0].LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EmailAdress)
+                @Html.DisplayNameFor(model => model[0].EmailAdress)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProductSerial)
+                @Html.DisplayNameFor(model => model[0].ProductSerial)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmailAdress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductSerial)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.SubmissionId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.SubmissionId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.SubmissionId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmailAdress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductSerial)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.SubmissionId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.SubmissionId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.SubmissionId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+<br />
+
+<div class="pull-right">
+    @Html.PagedListPager((X.PagedList.IPagedList)Model, page => Url.Action("Index", new { page }), new PagedListRenderOptionsBase
+    {
+        LiElementClasses = new string[] { "page-item" },
+        PageClasses = new string[] { "page-link" },
+        Display = PagedListDisplayMode.IfNeeded
+    })
+</div>
