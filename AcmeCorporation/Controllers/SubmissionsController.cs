@@ -64,17 +64,18 @@ namespace AcmeCorporation.Controllers
                                                             where s.ProductSerial == submission.ProductSerial
                                                             select s;
 
-                if (Submissions.Count() <= 2 && ValidSerials.Count() <= 0)
+                if (Submissions.Count() < 2 && ValidSerials.Count() > 0)
                 {
                     _context.Add(submission);
                     await _context.SaveChangesAsync();
+
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
-                    // Missing logic
+                    return RedirectToAction(nameof(Edit));
                 }
 
-                return RedirectToAction(nameof(Index));
             }
             return View(submission);
         }
