@@ -14,6 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
@@ -28,9 +30,6 @@
   <ItemGroup>
     <Reference Include="ageCalc">
       <HintPath>..\ageCalc\bin\Debug\netcoreapp3.0\ageCalc.dll</HintPath>
-    </Reference>
-    <Reference Include="Pagination">
-      <HintPath>..\Pagination\bin\Debug\netcoreapp3.0\Pagination.dll</HintPath>
     </Reference>
   </ItemGroup>
 

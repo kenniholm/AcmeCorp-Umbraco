@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AcmeCorporation.Models;
 using X.PagedList;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AcmeCorporation.Controllers
 {
@@ -20,15 +21,16 @@ namespace AcmeCorporation.Controllers
         }
 
         // GET: Submissions
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Index(int? page)
         {
             var submissions = from s in _context.Submission
                                      select s;
 
-            int pageSize = 3;
-            int pageNumber = (page ?? 1);
+            int pageSize = 10;
+            int pageNumber = page ?? 1;
 
-            return View( await submissions.ToPagedListAsync(pageNumber, pageSize));
+            return View(await submissions.ToPagedListAsync(pageNumber, pageSize));
         }
 
         // GET: Submissions/Details/5
