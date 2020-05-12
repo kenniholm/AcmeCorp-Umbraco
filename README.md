@@ -6,7 +6,7 @@ Be sure to atleast have .Net Core 3.0 installed before running the project. <br>
 .Net Core 3.0 can be found here: <br>
 https://dotnet.microsoft.com/download/dotnet-core/3.1 <br>
 Please use any of the supported browsers in the picture for the application to work as intended: <br>
-Pic pic pic pic <br>
+![](https://github.com/kenniholm/AcmeCorp-Umbraco/blob/master/Images/ISSExpress.PNG) <br>
 <br>
 For launching the project itself i recommend using visual studio, simply run it with ISS Express by clicking the button which is highlighted on the picture. <br>
 Make sure it is "AcmeCorporation" which is selected in the downdown menu next to the ISS Express button. <br>
