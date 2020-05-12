@@ -9,7 +9,7 @@ Please use any of the supported browsers in the picture for the application to w
 ![](https://github.com/kenniholm/AcmeCorp-Umbraco/blob/master/Images/datePickerSupport.PNG) <br>
 <br>
 **Launching the site:** <br>
-For launching the project itself i recommend using visual studio, simply double click the solution and run it with ISS Express by clicking the button which is highlighted on the picture. <br>
+For launching the project itself, i recommend using visual studio. Simply double click the solution in the "AcmeCorporation" folder and run it with ISS Express, by clicking the button which is highlighted on the picture. <br>
 Make sure it is "AcmeCorporation" which is selected in the dropdown menu next to the ISS Express button. <br>
 ![](https://github.com/kenniholm/AcmeCorp-Umbraco/blob/master/Images/ISSExpress.PNG)
 <br>
