@@ -19,10 +19,6 @@ namespace AcmeCorporation.Areas.Identity
                 services.AddDbContext<AcmeIdentityContext>(options =>
                     options.UseSqlite(
                         context.Configuration.GetConnectionString("AcmeIdentityContext")));
-
-                //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                //.AddRoles<IdentityRole>()
-                //    .AddEntityFrameworkStores<AcmeIdentityContext>();
             });
         }
     }

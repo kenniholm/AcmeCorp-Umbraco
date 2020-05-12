@@ -28,6 +28,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ageCalc\ageCalc.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="ageCalc">
       <HintPath>..\ageCalc\bin\Debug\netcoreapp3.0\ageCalc.dll</HintPath>
     </Reference>

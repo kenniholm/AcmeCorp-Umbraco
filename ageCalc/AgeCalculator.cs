@@ -23,10 +23,19 @@ namespace ageCalc
         private void CalcAge()
         {
             int age = DateTime.Now.Year - _dob.Year;
-            
-            if (DateTime.Now.DayOfYear < _dob.DayOfYear)
+            if (DateTime.IsLeapYear(DateTime.Now.Year))
             {
-                age -= 1;
+                if (DateTime.Now.DayOfYear <= _dob.DayOfYear)
+                {
+                    age -= 1;
+                }
+            }
+            else
+            {
+                if (DateTime.Now.DayOfYear < _dob.DayOfYear)
+                {
+                    age -= 1;
+                }
             }
 
             _age = age;
