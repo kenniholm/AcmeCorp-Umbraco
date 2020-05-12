@@ -36,8 +36,8 @@ namespace AcmeCorporation.Controllers
             return View();
         }
 
-        [Route("Home/InvalidAge/{contentId?}")]
-        public IActionResult InvalidAge(int contentId)
+        [Route("Home/ErrorPage/{contentId?}")]
+        public IActionResult ErrorPage(int contentId)
         {
             return View(contentId);
         }
@@ -56,12 +56,12 @@ namespace AcmeCorporation.Controllers
                 else
                 {
                     
-                    return RedirectToAction("InvalidAge", new { contentId = 1});
+                    return RedirectToAction("ErrorPage", new { contentId = 1});
                 }
             }
             else
             {
-                return RedirectToAction("InvalidAge", new { contentId = 2});
+                return RedirectToAction("ErrorPage", new { contentId = 2});
             }
         }
 

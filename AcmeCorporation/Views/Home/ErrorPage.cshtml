@@ -1,0 +1,21 @@
+﻿@model int
+@{
+    ViewData["Title"] = "View";
+}
+
+@switch (Model)
+{
+    case 1:
+        <h1>You are not old enough to participate in our raffle!</h1>
+        <p>Please consult your parents if you wish to enter.</p>
+        break;
+    case 2:
+        <h1>The date you entered is not valid!</h1>
+        break;
+    case 3:
+        <h1>Oops something went wrong!</h1>
+        <p>You either already entered twice with the same serial or entered a wrong one.</p>
+        break;
+}
+
+
