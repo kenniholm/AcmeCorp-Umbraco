@@ -1,8 +1,15 @@
-﻿
+﻿@model int
 @{
     ViewData["Title"] = "View";
 }
+@if (Model.Equals(1))
+{
+    <h1>You are not old enough to participate in our raffle!</h1>
+    <p>Please consult your parents if you wish to enter.</p>
+}
+else
+{
+    <h1>The date you entered is not valid!</h1>
+}
 
-<h1>You are not old enough to participate in our raffle!</h1>
-<p>Please consult your parents if you wish to enter.</p>
 

@@ -36,9 +36,10 @@ namespace AcmeCorporation.Controllers
             return View();
         }
 
-        public IActionResult InvalidAge()
+        [Route("Home/InvalidAge/{contentId?}")]
+        public IActionResult InvalidAge(int contentId)
         {
-            return View();
+            return View(contentId);
         }
 
         public IActionResult AgeVerification(string dateofBirth)
@@ -54,12 +55,13 @@ namespace AcmeCorporation.Controllers
                 }
                 else
                 {
-                    return RedirectToAction(nameof(InvalidAge));
+                    
+                    return RedirectToAction("InvalidAge", new { contentId = 1});
                 }
             }
             else
             {
-                return RedirectToAction(nameof(VerificationError));
+                return RedirectToAction("InvalidAge", new { contentId = 2});
             }
         }
 

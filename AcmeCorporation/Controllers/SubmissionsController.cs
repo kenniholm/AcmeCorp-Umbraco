@@ -20,7 +20,7 @@ namespace AcmeCorporation.Controllers
             _context = context;
         }
 
-        // GET: Submissions
+
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Index(int? page)
         {
@@ -33,7 +33,7 @@ namespace AcmeCorporation.Controllers
             return View(await submissions.ToPagedListAsync(pageNumber, pageSize));
         }
 
-        // GET: Submissions/Details/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -51,15 +51,13 @@ namespace AcmeCorporation.Controllers
             return View(submission);
         }
 
-        // GET: Submissions/Create
+
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Submissions/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,FirstName,LastName,EmailAdress,ProductSerial")] Submission submission)
@@ -90,7 +88,7 @@ namespace AcmeCorporation.Controllers
             return View(submission);
         }
 
-        // GET: Submissions/Edit/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -106,9 +104,7 @@ namespace AcmeCorporation.Controllers
             return View(submission);
         }
 
-        // POST: Submissions/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("id,FirstName,LastName,EmailAdress,ProductSerial")] Submission submission)
@@ -141,7 +137,7 @@ namespace AcmeCorporation.Controllers
             return View(submission);
         }
 
-        // GET: Submissions/Delete/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -159,7 +155,7 @@ namespace AcmeCorporation.Controllers
             return View(submission);
         }
 
-        // POST: Submissions/Delete/5
+        [Authorize(Roles = "Administrator")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
