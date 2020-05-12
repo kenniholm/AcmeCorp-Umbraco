@@ -18,7 +18,7 @@ The web application will automaticly seed the db if there is no valid serials in
 and print them to a text document located in the root of the "AcmeCorporation" folder. This file is called "ProductSerials" it can be
 opened with any text editor. <br>
 These can be used to enter the draw. If any of them wont work it is most likely because they were used for the first 11 entries, just try another and it should work fine.
-The 11 were added to show the functionality of the pagination on the submissions page.<br>
+The 11 entries were added to show the functionality of the pagination on the submissions page.<br>
 <br>
 **Login:** <br>
 Before you can view the Submissions page you are going to need a user with the "administrator" role. <br>
