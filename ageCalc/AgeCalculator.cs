@@ -5,14 +5,14 @@ namespace ageCalc
     public class AgeCalculator : IAgeCalculation
     {
         private DateTime _dob;
-        private static int _age;
+        private int _age;
 
 
         public bool Is18(DateTime dob)
         {
             _dob = dob;
             CalcAge();
-            if (_age > 18 || _age.Equals(18))
+            if (_age >= 18)
             {
                 return true;
             }
